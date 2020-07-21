@@ -116,38 +116,29 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#Hadoop Variables
-#export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-arm64
-#export HADOOP_HOME=/usr/local/hadoop
-#export HADOOP_MAPRED_HOME=$HADOOP_HOME
-#export HADOOP_COMMON_HOME=$HADOOP_HOME
-#export HADOOP_HDFS_HOME=$HADOOP_HOME
-#export YARN_HOME=$HADOOP_HOME
-#export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-#export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"    
-
-#export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
-#export SPARK_HOME=/usr/local/spark
-#export SCALA_HOME=/usr/local/scala
-#export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SCALA_HOME/bin:$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH
-# Directories
-BIN=/Users/daniel/bin
-export PATH=$BIN:$BIN/maven/bin:$PATH
-export CLASSPATH=$HOME/Documents/Dev/Frameworks/activator-1.3.10-minimal/libexec:Users/daniel/libexec/
-export WORKBENCH=$HOME/Desktop/Workbench
-
-export UMKC=$HOME/OneDrive/Documents/UMKC/
-export UMKC_RESEARCH=$UMKC/RESEARCH
-
-# Alias
-alias grep="grep --color=always "
-alias umkc="cd $UMKC; ls"
 
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
+# Directories
+export PATH=$HOME/bin:$PATH
 export ONEDRIVE_HOME=$HOME/OneDrive/
+export UMKC=$ONEDRIVE_HOME/Documents/UMKC/
+export UMKC_RESEARCH=$UMKC/RESEARCH
+
 export GITHUB_HOME=$HOME/Code/GitHubRepos/
 export RESEARCH=$ONEDRIVE_HOME/Documents/RESEARCH/
 export NODES=$RESEARCH/nodes/
+export CODE=$HOME/Code/
+export OGR=$HOME/OGR/
+export GITHUB_HOME=$HOME/Code/
+export PYTHONSTARTUP="$HOME/.pythonrc"
+
+# Alias
+alias grep="grep --color=always "
+alias vim="nvim"
+alias todo="cat $ONEDRIVE_HOME/journal.md"
+alias todoe="nvim $ONEDRIVE_HOME/journal.md"
+
+
 
