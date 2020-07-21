@@ -23,6 +23,7 @@ Plug 'lervag/vimtex'			                      " Plug for latex
 " Color-schemes
 Plug 'junegunn/limelight.vim'			              " Select current line
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ajmwagar/vim-deus'
 
 " Plug 'jceb/vim-orgmode' 
 " Plug 'chrisbra/NrrwRgn'
@@ -30,9 +31,9 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()            " required
 
 " airline-config
-"let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme='simple'
+let g:airline#extensions#tabline#formatter = 'default'
 
 " C++-config
 let g:cpp_class_scope_highlight = 1
@@ -54,6 +55,13 @@ let delimitMate_expand_cr = 1
 " Tagbar map
 nmap <F8> :TagbarToggle<CR>
 
+" Goyo and limelight
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+
 " Autosave for latex
 let g:auto_save = 0
 augroup ft_tex
@@ -62,30 +70,4 @@ augroup ft_tex
   au FileType bib let b:auto_save = 1
   au FileType plaintex let b:auto_save = 1
 augroup END
-
-" Goyo and limelight
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-let g:limelight_conceal_guifg = 'DarkGray'
-let g:limelight_conceal_guifg = '#777777'
-
-"Goyo settings
-function! s:goyo_enter()
-    set noshowmode
-    set noshowcmd
-    set nocursorline
-    CocDisable
-    Limelight
-endfunction
-
-function! s:goyo_leave()
-    set showmode
-    set showcmd
-    set cursorline
-    CocEnable
-    Limelight!
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave() 
 
