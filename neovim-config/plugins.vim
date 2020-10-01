@@ -25,6 +25,8 @@ Plug 'junegunn/limelight.vim'			              " Select current line
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ajmwagar/vim-deus'
 
+" Documentations
+Plug 'rizzatti/dash.vim'
 " Plug 'jceb/vim-orgmode' 
 " Plug 'chrisbra/NrrwRgn'
 
