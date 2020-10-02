@@ -108,9 +108,9 @@ fi
 
 local prompt_ret_status="%(?:🐳:🙈)"
 local prompt_date_time_format="%{$fg_bold[white]%}%D{%m/%d|%R}%{$reset_color%}"
-local prompt_dir_info="%{$fg[cyan]%}%c%{$reset_color%}"
+local prompt_dir_info="%{$fg_bold[cyan]%}%c%{$reset_color%}"
 local prompt_new_line=$'\n'
-
+local bold="%{$fg_bold[white]%}"
 
 PROMPT='${prompt_new_line}\
 ${prompt_ret_status} \
