@@ -27,11 +27,11 @@ alias vim="nvim"
 #alias todo="cat $ONEDRIVE_HOME/journal.md"
 #alias todoe="nvim $ONEDRIVE_HOME/journal.md"
 
-alias gacp='git add --all && git commit -m "Automatic commit" && git push origin master'
+alias gacp='git add --all && git commit -m "Automatic commit" && git push origin main'
 alias gia='git add --all'
 alias gic='git commit -m'
-alias gip='git push origin master'
-alias gil='git pull origin master'
+alias gip='git push origin main'
+alias gil='git pull origin main'
 alias gitp='git push'
 alias gitl='git pull'
 alias gtodo='dev_op_repos_status.sh'
