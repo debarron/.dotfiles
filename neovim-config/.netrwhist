@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/daniellopez/IdeaProjects/teradata-workflow-monitor/src/main/scala/cli'
+let g:netrw_dirhist_7='/Users/daniellopez/IdeaProjects/teradata-workflow-monitor/src/main/scala'
+let g:netrw_dirhist_6='/Users/daniellopez/IdeaProjects/teradata-workflow-monitor/src/main/scala/cli'
+let g:netrw_dirhist_5='/Users/daniellopez/IdeaProjects/teradata-workflow-monitor/src/main/scala'
+let g:netrw_dirhist_4='/Users/daniellopez/IdeaProjects/teradata-workflow-monitor/src/main'
+let g:netrw_dirhist_3='/Users/daniellopez/IdeaProjects/teradata-workflow-monitor/src'
+let g:netrw_dirhist_2='/Users/daniellopez/IdeaProjects/teradata-workflow-monitor'
 let g:netrw_dirhist_1='/home/daniel/.config/oh-my-zsh/custom'
