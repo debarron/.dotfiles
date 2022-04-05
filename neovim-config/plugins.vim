@@ -25,7 +25,6 @@ Plug '907th/vim-auto-save'			                " Based on filetype    	*--
 Plug 'vim-scripts/utl.vim'                      " --
 Plug 'majutsushi/tagbar'			                  " Tagbar for elements	*
 Plug 'junegunn/goyo.vim'			                  " Writing in focus mode	*
-Plug 'neovim-remote/nvr'
 
 " Syntax
 Plug 'octol/vim-cpp-enhanced-highlight'		      " C++ syntax-highlight 
