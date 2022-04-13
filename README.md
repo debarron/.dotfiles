@@ -1,4 +1,4 @@
-# essential-configs
+# dot-files
 
 My essential configurations for terminals and other editors.
 So far, the list includes
