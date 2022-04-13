@@ -34,4 +34,5 @@ mkdir ~/Code
 git clone git@github.com:debarron/dot-files.git
 -- move inside the repo and put all configs in `~/.config`
 
-
+# Install github-desktop
+-- From flatpak, look at the most recently updated one
