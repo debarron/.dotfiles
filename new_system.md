@@ -12,6 +12,8 @@ sudo snap install nvim --classic
 sudo snap install pycharm-community --classic
 sudo snap install slack
 sudo snap install spotify
+sudo snap install dbeaver-ce
+sudo snap install postman
 
 # Configure zsh shell
 ## Install
