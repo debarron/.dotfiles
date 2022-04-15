@@ -36,6 +36,8 @@ alias gitp='git push'
 alias gitl='git pull'
 alias gtodo='dev_op_repos_status.sh'
 
+alias python="python3"
+
 alias clusterc='f() { cd '$CODE/ClusterConfig' && ./cluster-configure-morespace.sh $1 dl544 ~/.ssh/id_cloudlab};f'
 alias ramcloudc='f() { cd '$CODE/RAMCloudConfigure' && ./ramcloud-configure.sh $1 dl544 ~/.ssh/id_cloudlab};f'
 alias fusec='f() { cd '$CODE/FUSEConfigure' && ./fuse-configure.sh $1 dl544 ~/.ssh/id_cloudlab};f'

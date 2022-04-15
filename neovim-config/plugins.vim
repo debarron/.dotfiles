@@ -33,6 +33,7 @@ Plug 'Raimondi/delimitMate'			                " Add closing brackets
 Plug 'derekwyatt/vim-scala'			                " Scala and Play Framework
 Plug 'gre/play2vim'
 Plug 'lervag/vimtex'			                      " Plug for latex
+Plug 'tpope/vim-markdown'
 
 " Documentations
 Plug 'rizzatti/dash.vim'
