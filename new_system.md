@@ -38,3 +38,4 @@ git clone git@github.com:debarron/dot-files.git
 
 # Install github-desktop
 -- From flatpak, look at the most recently updated one
+-- Install anaconda from `https://docs.anaconda.com/anaconda/install/linux/`

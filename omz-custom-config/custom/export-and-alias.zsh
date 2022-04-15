@@ -9,6 +9,7 @@ export ONEDRIVE_HOME="$HOME/OneDrive/"
 #export NODES="$RESEARCH/nodes/"
 export OGR="$HOME/OGR/"
 export CODE="$HOME/Code/"
+export ENVS="$HOME/Envs/"
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
 export CLOUDLAB_USER="dl544"
