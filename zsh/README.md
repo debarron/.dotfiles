@@ -16,6 +16,6 @@ Then, run `mv ~/.ohmyzsh ~/.config/ohmyzsh`
 ## How to configure this part
 1. `cp .zshrc ~/`
 2. `cp .config/ohmyzsh/custom ~/.config/ohmyzsh/`
-3. `source $HOME/.zshrc`
+3. `source ~/.zshrc`
 
 
