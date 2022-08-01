@@ -26,24 +26,16 @@ source $ZSH_CUSTOM/export-and-alias.zsh
 source $ZSH_CUSTOM/anaconda-shell.zsh
 source $ZSH_CUSTOM/prompt.zsh
 
-#setopt PROMPT
-#local prompt_ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-# GIT info
-plugins=(git zsh-syntax-highlighting)
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-zstyle ':vcs_info:git:*' formats '%b'
-
-local prompt_git_info="${vcs_info_msg_0_}"
-#local prompt_git_info="$prompt_branch_git_info"
-
-if [[ "$prompt_git_info" == "master" ]]
-then 
-  local prompt_git_info="⚡️"
-else
-  local prompt_git_info="${vcs_info_msg_0_}"
-fi
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo '- ('$branch')'
+  fi
+}
 
 
 local prompt_ret_status="%(?:🐳:🙈)"
@@ -56,6 +48,6 @@ PROMPT='${prompt_new_line}\
 ${prompt_ret_status} \
 ${prompt_date_time_format} \
 ${prompt_dir_info} \
-${prompt_git_info} \
+$(git_branch_name) \
 ${prompt_new_line}> '
 
