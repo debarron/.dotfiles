@@ -1,5 +1,0 @@
-#!/bin/bash
-
-REPO_DIR=
-XDG_CONFIG_HOME=$REPO_DIR/nvim/config XDG_DATA_HOME=$REPO_DIR/nvim/data $REPO_DIR/nvim/nvim-linux64/bin/nvim $@
-
