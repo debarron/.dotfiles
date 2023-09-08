@@ -1,12 +1,13 @@
-# dot-files
+# dotfiles
 
-My essential configurations for terminals and other editors.
-So far, the list includes
+My dev configuration. Let's do this one more time.
+- neovim
+- zsh
 
-## Create links as
-ln -sr `dir` `path_to_link`
+## neovim
+Run `scripts/install_nvim.sh NVIM_SRC_DIR NVIM_LINK_DIR`.
+Where `NVIM_SRC_DIR` is where to keep the src files and 
+`NVIM_LINK_DIR` is where to put the relative symlink to 
+the nvim executable. 
 
-* [Bash](./bash-config/README.md)
-* [Neovim](./neovim-config/README.md)
-* [Mac-terminal](./mac-terminal-config/README.md)
-* [Alacritty] Comming soon
+
