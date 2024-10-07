@@ -1,88 +1,94 @@
--- Install packer
-local local_packer = '/site/pack/packer/start/packer.nvim'
-local install_path = vim.fn.stdpath 'data' .. local_packer
-local is_bootstrap = false
+require("debarron.remap")
+require("debarron.style")
+require("debarron.packer")
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	is_bootstrap = true
-	vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
-	vim.cmd [[packadd packer.nvim]]
-end
 
-require('packer').startup(function(use)
-	-- Package manager
-	use 'wbthomason/packer.nvim'
 
-  use 'nvim-tree/nvim-web-devicons'
-
-  -- LSP Configuration & Plugins
-	use {'neovim/nvim-lspconfig',
-    requires = {
-      -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      'j-hui/fidget.nvim',
-
-      -- Additional lua configuration, makes nvim stuff amazing
-      'folke/neodev.nvim',
-    },
-  }
-
-  -- Autocompletion
-  use {'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip'
-    },
-  }
-
-  -- Highlight, edit, and navigate code
---  use {'nvim-treesitter/nvim-treesitter',
---    run = function()
---      pcall(require('nvim-treesitter.install').update { with_sync = true })
---    end,
+---- Install packer
+--local local_packer = '/site/pack/packer/start/packer.nvim'
+--local install_path = vim.fn.stdpath 'data' .. local_packer
+--local is_bootstrap = false
+--
+--if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+--	is_bootstrap = true
+--	vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path }
+--	vim.cmd [[packadd packer.nvim]]
+--end
+--
+--require('packer').startup(function(use)
+--	-- Package manager
+--	use 'wbthomason/packer.nvim'
+--
+--  use 'nvim-tree/nvim-web-devicons'
+--
+--  -- LSP Configuration & Plugins
+--	use {'neovim/nvim-lspconfig',
+--    requires = {
+--      -- Automatically install LSPs to stdpath for neovim
+--      'williamboman/mason.nvim',
+--      'williamboman/mason-lspconfig.nvim',
+--
+--      -- Useful status updates for LSP
+--      'j-hui/fidget.nvim',
+--
+--      -- Additional lua configuration, makes nvim stuff amazing
+--      'folke/neodev.nvim',
+--    },
 --  }
-
-  -- Additional text objects via treesitter
---  use {'nvim-treesitter/nvim-treesitter-textobjects',
---    after = 'nvim-treesitter',
+--
+--  -- Autocompletion
+--  use {'hrsh7th/nvim-cmp',
+--    requires = {
+--      'hrsh7th/cmp-nvim-lsp',
+--      'L3MON4D3/LuaSnip',
+--      'saadparwaiz1/cmp_luasnip'
+--    },
 --  }
-
-  -- Git related plugins
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
-  use 'lewis6991/gitsigns.nvim'
-
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
-  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
-  --use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
-  --use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
-
-  -- Fuzzy Finder (files, lsp, etc)
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
-
-  use 'theprimeagen/harpoon'
-
-  -- Scala effort in vim
-  use { 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } }
-
-  -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
-  local has_plugins, plugins = pcall(require, 'custom.plugins')
-  if has_plugins then
-    plugins(use)
-  end
-
-  if is_bootstrap then
-    require('packer').sync()
-  end
-end)
+--
+--  -- Highlight, edit, and navigate code
+----  use {'nvim-treesitter/nvim-treesitter',
+----    run = function()
+----      pcall(require('nvim-treesitter.install').update { with_sync = true })
+----    end,
+----  }
+--
+--  -- Additional text objects via treesitter
+----  use {'nvim-treesitter/nvim-treesitter-textobjects',
+----    after = 'nvim-treesitter',
+----  }
+--
+--  -- Git related plugins
+--  use 'tpope/vim-fugitive'
+--  use 'tpope/vim-rhubarb'
+--  use 'lewis6991/gitsigns.nvim'
+--
+--  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+--  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
+--  --use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+--  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
+--  --use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+--
+--  -- Fuzzy Finder (files, lsp, etc)
+--  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+--
+--  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+--  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+--
+--  use 'theprimeagen/harpoon'
+--
+--  -- Scala effort in vim
+--  use { 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } }
+--
+--  -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
+--  local has_plugins, plugins = pcall(require, 'custom.plugins')
+--  if has_plugins then
+--    plugins(use)
+--  end
+--
+--  if is_bootstrap then
+--    require('packer').sync()
+--  end
+--end)
 
 -- When we are bootstrapping a configuration, it doesn't
 -- make sense to execute the rest of the init.lua.
@@ -108,8 +114,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
+-- Commands
 
-vim.g.mapleader = ' '
+
 vim.g.maplocalleader = ' '
 vim.o.hlsearch = false
 vim.wo.number = true
@@ -182,40 +189,6 @@ require('gitsigns').setup {
 		changedelete = { text = '~' },
 	},
 }
-
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
-	defaults = {
-		mappings = {
-			i = {
-				['<C-u>'] = false,
-				['<C-d>'] = false,
-			},
-		},
-	},
-}
-
-
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
-
--- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-	-- You can pass additional configuration to telescope to change theme, layout, etc.
-	require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-		winblend = 10,
-		previewer = false,
-	})
-end, { desc = '[/] Fuzzily search in current buffer]' })
-
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
